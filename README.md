@@ -1,12 +1,25 @@
 # LeetCode SQL 50 — Window Functions Edition
 
-This repository contains solutions to the LeetCode SQL 50 problems implemented using **window functions** where applicable.  
-The goals:
-- Build strong, practical window function skills
-- Show a consistent problem-solving approach
-- Provide clean, readable SQL solutions
+LeetCode SQL 50 — Window Function Solutions
 
-## Structure
+This repository contains my solutions to the LeetCode SQL 50 problems.
+Instead of solving them with the simplest approach, I focused on window functions, since they are highly important in Data Engineering and real-world SQL problem solving.
+
+📂 Repository Structure
+leetcode-sql-50-window/
+├── README.md
+├── approach.md
+├── notes/
+│   └── window-functions-cheatsheet.md
+└── problems/
+    ├── 001 Select/
+    ├── 002 Basic Joins/
+    ├── 003 Basic Aggregate Functions/
+    ├── 004 Sorting and Grouping/
+    ├── 005 Advanced Select and Joins/
+    ├── 006 Subqueries/
+    └── 007 Advanced String Functions, Regex, Clause/
+    
 - `problems/` — each SQL file is a single problem solution
 - `approach.md` — my problem-solving framework
 - `notes/window-functions-cheatsheet.md` — quick window functions reference
