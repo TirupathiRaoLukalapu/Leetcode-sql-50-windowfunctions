@@ -1,5 +1,20 @@
--- 584. Find Customer Referee
--- Solution: Select customers not referred OR referred by someone other than id=2
+
+/*
+584. Find Customer Referee
+------------------------------------------
+Question:
+Find the names of customers who are either:
+1. Not referred by anyone, OR
+2. Referred by a customer whose id != 2.
+
+------------------------------------------
+Approach / Explanation:
+1. Select all customers.
+2. Exclude those referred by id = 2.
+3. Include customers with NULL referee_id.
+
+*/
+
 
 select name
 from customer
