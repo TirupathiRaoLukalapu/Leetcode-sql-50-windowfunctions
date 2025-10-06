@@ -23,11 +23,6 @@ I encourage you to explore the repository. If you are interested in discussing S
 I have spent a lot of time pushing these solutions, and I hope they will be helpful to others. If you find any mistakes, please ping me — I am always happy to learn and engage in discussions to expand my knowledge.
 
 
-![SQL Badge](assets/sql-badge.gif)
-
-![Weekly Ranking](assets/Screenshot.png)
-
-
 leetcode-sql-50-window/
 ├── README.md
 ├── approach.md
