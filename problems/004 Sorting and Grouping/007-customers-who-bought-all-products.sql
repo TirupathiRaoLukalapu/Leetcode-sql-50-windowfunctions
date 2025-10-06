@@ -1,27 +1,33 @@
 /*
 ------------------------------------------
 Problem: 1045. Customers Who Bought All Products
------------------------------------------
+------------------------------------------
 Question:
-Find all customer IDs from the Customer table who have bought
-ALL the products listed in the Product table.
+Find all customer IDs who have bought every product available
+in the Product table.
 
 ------------------------------------------
-Approach / Explanation:
-1. Count the total number of distinct products from the Product table.
-2. For each customer, count how many **distinct products** they bought.
-3. Compare each customer's distinct count with the total number of products.
-4. Return only those customers whose count matches the total.
+Approach / Explanation (Using Window Functions):
+1. Determine the total number of unique products from the Product table.
+2. Use a window function to count distinct product_keys per customer.
+3. Compare each customer's count with the total number of products.
+4. Select customers who have purchased all products.
 
 ------------------------------------------
-SQL Solution:
+SQL Solution (Window Function):
 */
 
-SELECT
-    c.customer_id
-FROM Customer c
-GROUP BY c.customer_id
-HAVING COUNT(DISTINCT c.product_key) = (
-    SELECT COUNT(DISTINCT p.product_key)
-    FROM Product p
-);
+WITH total_products AS (
+    SELECT COUNT(DISTINCT product_key) AS total_count
+    FROM Product
+),
+customer_products AS (
+    SELECT
+        customer_id,
+        COUNT(DISTINCT product_key) OVER (PARTITION BY customer_id) AS customer_count
+    FROM Customer
+)
+SELECT DISTINCT
+    customer_id
+FROM customer_products, total_products
+WHERE customer_count = total_count;
